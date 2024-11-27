@@ -1,0 +1,27 @@
+<!-- job_management/templates/job_management/view_job_description.html -->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>View Job Description</title>
+</head>
+<body>
+
+<h1>{{ job.job_title }}</h1>
+<p><strong>Responsibilities:</strong> {{ job.responsibilities }}</p>
+<p><strong>Skills Required:</strong> {{ job.skills_required }}</p>
+<p><strong>Experience:</strong> {{ job.experience }}</p>
+
+<h3>Interview Questions</h3>
+<ul>
+    {% for question in interview_questions %}
+        <li>{{ question.question_text }} - Answer: {{ question.answer }}</li>
+    {% empty %}
+        <li>No interview questions added yet.</li>
+    {% endfor %}
+</ul>
+
+<a href="{% url 'edit_interview_questions' job.id %}">Edit Interview Questions</a>
+
+</body>
+</html>

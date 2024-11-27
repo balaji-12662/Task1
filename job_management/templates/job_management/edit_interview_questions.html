@@ -1,0 +1,21 @@
+<!-- job_management/templates/job_management/edit_interview_questions.html -->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Edit Interview Questions</title>
+</head>
+<body>
+
+<h1>Edit Interview Questions for {{ job.job_title }}</h1>
+
+<form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Save Question</button>
+</form>
+
+<a href="{% url 'view_job_description' job.id %}">Back to Job Description</a>
+
+</body>
+</html>

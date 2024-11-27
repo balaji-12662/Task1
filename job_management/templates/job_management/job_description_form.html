@@ -1,0 +1,19 @@
+<!-- job_management/templates/job_management/job_description_form.html -->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Create Job Description</title>
+</head>
+<body>
+
+<h1>Job Description Form</h1>
+
+<form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Submit</button>
+</form>
+
+</body>
+</html>
